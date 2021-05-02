@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import smtplib
 from datetime import datetime
 
+
 def check_price():
     is_avail = False
     page = requests.get(URL, headers=headers)
@@ -47,11 +48,12 @@ def send_email(convert, item_avail):
     print("Email has been sent")
     server.quit()
 
+
 URL = 'https://www.amazon.in/New-Apple-iPhone-12-128GB/dp/B08L5WD9D6/ref=sr_1_1?dchild=1&keywords=iphone+12&qid' \
       '=1619925185&sr=8-1 '
 
 headers = {
     "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
                   'Chrome/90.0.4430.93 Safari/537.36'}
-
-check_price()
+for i in range(0, 50):
+    check_price()
